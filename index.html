@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <link rel="stylesheet" href="styles.css">
+        <title>CSS3 Selectors Cheatsheet</title>
+    </head>
+    <body>
+        <nav id="navbar">
+            <header>
+                <h1>CSS3 Selectors Cheatsheet</h1>
+                <ul>
+                    <li><a href="#simple_or_basic_selectors" class="nav-link">Simple or Basic Selectors</a></li>
+                    <li><a href="#combinator_selectors" class="nav-link">Combinator Selectors</a></li>
+                    <li><a href="#pseudo_classes_selectors" class="nav-link">Pseudo Classes Selectors</a></li>
+                    <li><a href="#pseudo_elements_selectors" class="nav-link">Pseudo Elements Selectors</a></li>
+                    <li><a href="#attribute_selectors" class="nav-link">Attribute Selectors</a></li>
+                    <li><a href="#css_group_selectors" class="nav-link">CSS Group Selectors</a></li>
+                </ul>
+            </header>
+        </nav>
+        <main id="main-doc">
+            <p>CSS selectors are utilized to select the content you need to style. In CSS Rule Set, Selectors are the part. CSS selectors select HTML elements as per their id, class, type, attribute, etc.</p>
+            <p>A CSS selector is the first part of a CSS Rule. It is a pattern of elements and other terms that tell the browser which HTML elements should be selected to have the CSS property values inside the rule applied to them. The element or elements which are selected by the selector are referred to as the subject of the selector.</p>
+            <p>In other articles you may have met some different selectors, and learned that there are selectors that target the document in different ways — for example by selecting an element such as h1, or a class such as .special.</p>
+            <p>In CSS, selectors are defined in the CSS Selectors specification; like any other part of CSS they need to have support in browsers for them to work. The majority of selectors that you will come across are defined in the Level 3 Selectors specification and Level 4 Selectors specification, which are both mature specifications, therefore you will find excellent browser support for these selectors.</p>
+            <section class="main-section" id="simple_or_basic_selectors">
+                <h2>Simple or Basic Selectors</h2>
+                <article>
+                    <p>select elements based on name, id, class</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Selector</th>
+                                <th>Example</th>
+                                <th>Example description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><p><code>#id</code></p></td>
+                                <td><p><code>#firstname</code></p></td>
+                                <td><p>Selects the element with <code>id="firstname"</code></p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>.class</code></p></td>
+                                <td><p><code>.intro</code></p></td>
+                                <td> <p>Selects all elements with <code>class="intro"</code></p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>element.class</code></p></td>
+                                <td><p><code>p.intro</code></p></td>
+                                <td> <p>Selects only <code>&#60;p&#62;</code> elements with <code>class="intro"</code></p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>*</code></p></td>
+                                <td><p><code>*</code></p></td>
+                                <td> <p>Selects all elements</td>
+                            </tr>
+                            <tr>
+                                <td><p><code>element</code></p></td>
+                                <td><p><code>p</code></p></td>
+                                <td> <p>Selects all <code>&#60;p&#62;</code> elements</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>element,element,..</code></p></td>
+                                <td><p><code>div, p</code></p></td>
+                                <td> <p>Selects all <code>&#60;div&#62;</code> elements and all <code>&#60;p&#62;</code> elements</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Element</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><p><code>element</code></p></td>
+                                <td><p><code>Type selector. Matches an element.</code></p></td>
+                                <td><p><code>p { color: red }</code>matches paragraphs</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>.class</code></p></td>
+                                <td><p>Class selector. Matches the value of anclassattribute.</p></td>
+                                <td> <p><code>.warning { color: red }</code> matches elements containing class="warning"</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>#id</code></p></td>
+                                <td><p>ID selector. Matches the value of an id attribute.</p></td>
+                                <td> <p><code>#warning { color: red }</code> matches elements containing id="warning"</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>*</code></p></td>
+                                <td><p>Universal selector. Matches everything.</p></td>
+                                <td> <p><code>* { color: red }</code> matches everything</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+            <section class="main-section" id="combinator_selectors">
+                <h2>Combinator Selectors</h2>
+                <article>
+                    <p>select elements based on a specific relationship between them</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Selector</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><p><code>selector selector</code></p></td>
+                                <td><p>Descendant combinator. Matches elements that are descendants of another element.</p></td>
+                                <td><p><code>aside p { color: red }</code> matches paragraphs inside elements containing class="warning"</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>selector > selector</code></p></td>
+                                <td><p>Child combinator. Matches elements that are children of another element.</p></td>
+                                <td><p><code>.warning > p { color: red }</code> matches paragraphs that are children of elements containing class="warning"</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>selector + selector</code></p></td>
+                                <td><p>Adjacent sibling combinator. Matches elements that immediately follow another element.</p></td>
+                                <td><p><code>h1 + * { color: red }</code> matches the first element to follow a top-level heading</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>selector ~ selector</code></p></td>
+                                <td><p>General sibling combinator. Matches elements that follow another element.</p></td>
+                                <td><p><code>h2 ~ p { color: red }</code> matches every paragraph that follows a second-level heading</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+            <section class="main-section" id="pseudo_classes_selectors">
+                <h2>Pseudo Classes Selectors</h2>
+                <article>
+                    <p>select elements based on a certain state</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Selector</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><p><code>:link</code></p></td>
+                                <td><p>Matches a link that has not been visited.</p></td>
+                                <td><p><code>a:link { color: blue }</code></p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:visited</code></p></td>
+                                <td><p>Matches a link that has been visited.</p></td>
+                                <td><p><code>a:visited { color: purple }</code></p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:active</code></p></td>
+                                <td><p>Matches an element that is being activated, such as a link being clicked on.</p></td>
+                                <td><p><code>a:active { color: red }</code></p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:hover</code></p></td>
+                                <td><p>Matches an element whose box is being hovered over by a cursor.</p></td>
+                                <td><p><code>a:hover { text-decoration: none }</code></p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:focus</code></p></td>
+                                <td><p>Matches an element that has focus, such as one that has been tabbed to.</p></td>
+                                <td><p><code>a:focus { border: 1px solid yellow }</code> elements</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:target</code></p></td>
+                                <td><p>Matches an element that has been linked to (via <code>&#60;a href='#x'…&#62;</code>,for example).</p></td>
+                                <td><p><code>h2:target { color: red }</code> matches a second-level heading that has been linked to</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:lang()</code></p></td>
+                                <td><p>Matches an element of a given language.</p></td>
+                                <td><p><code>p:lang(fr) { color: red }</code> matches paragraphs that are declared, or otherwise considered, as French</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:first-child</code></p></td>
+                                <td><p>Matches the first child of an element.</p></td>
+                                <td><p><code>p:first-child { color: red }</code> matches the first child, if it is a paragraph, of an element</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:last-child</code></p></td>
+                                <td><p>Matches the last child of an element.</p></td>
+                                <td><p><code>div p:last-child { color: blue }</code> matches the last child, if it is a paragraph, of an element</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:first-of-type</code></p></td>
+                                <td><p>Matches the first sibling of its type in an element.</p></td>
+                                <td><p><code>li:first-of-type { color: red }</code> matches the first instance of a list item inside an element</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:last-of-type</code></p></td>
+                                <td><p>Matches the last sibling of its type in an element.</p></td>
+                                <td><p><code>li:last-of-type { color: blue }</code> matches the last instance of a list item inside an element</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:nth-child()</code></p></td>
+                                <td><p>Matches an element that is the ordinal number child of its parent.</p></td>
+                                <td><p><code>p:nth-child(3) { color: red }</code> matches the third child, if it is a paragrpah, of an elemen</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:nth-last-child()</code></p></td>
+                                <td><p>Matches an element that is the ordinal number child, in reverse order, of its parent.</p></td>
+                                <td><p><code>p:nth-last-child(2) { color: blue }</code> matches the next-to-last child, if it is a paragraph, of an element</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:nth-of-type()</code></p></td>
+                                <td><p>Matches an element that is the ordinal number sibling of its type.</p></td>
+                                <td> <p><code>li:nth-of-type(5) { color: red }</code> matches the fifth instance of a list item inside an element</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:nth-last-of-type()</code></p></td>
+                                <td><p>Matches an element that is the ordinal number sibling, in reverse order, of its type.</p></td>
+                                <td><p><code>li:nth-of-type(5) { color: red }</code> matches the next-to-last instance of a list item inside an element</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:only-child</code></p></td>
+                                <td><p>Matches an element if it is the only child of its parent.</p></td>
+                                <td><p><code>article p:only-child { color: red }</code> matches a paragraph if it is the only child of an article element</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:only-of-type</code></p></td>
+                                <td><p>Matches an element if it is the only sibling of its type.</p></td>
+                                <td> <p><code>article aside:only-of-type { color: blue }</code> matches an aside element if it is the only aside element in an article element</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:empty</code></p></td>
+                                <td><p>Matches an element with no children, or content.</p></td>
+                                <td><p><code>td:empty { border-color: red }</code> matches table data cells with nothing in 'em</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:root</code></p></td>
+                                <td><p>Matches the root element of a document. This will be the html element in HTML.</p></td>
+                                <td> <p><code>:root { background: yellow }</code></p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:enabled</code></p></td>
+                                <td><p>Matches form control elements that are not disabled.</p></td>
+                                <td><p><code>input:enabled { border-color: lime }</code> matches input elements that are not disabled</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:disabled</code></p></td>
+                                <td><p>Matches form control elements that are disabled.</p></td>
+                                <td> <p><code>input:enabled { border-color: red }</code> matches input elements that are disabled</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:checked</code></p></td>
+                                <td><p>Matches a radio or checkbox type input element that is checked.</p></td>
+                                <td><p><code>input:checked { outline: 3px solid yellow }</code> matches checked input elements</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>:not()</code></p></td>
+                                <td><p>Negotiation pseudo-class. Matches an element that does not match a selector.</p></td>
+                                <td><p><code>p:not(:first-child) { color: orange }</code> matches paragraphs that are not first children</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+            <section class="main-section" id="pseudo_elements_selectors">
+                <h2>Pseudo Elements Selectors</h2>
+                <article>
+                    <p>select and style a part of an element</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Selector</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><p><code>::first-line</code></p></td>
+                                <td><p>Matches the first textual line in an element.</p></td>
+                                <td><p><code>p::first-line { font-weight: bold }</code> matches the first line in a paragraph</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>::first-letter</code></p></td>
+                                <td><p>Matches the first letter in an element.</p></td>
+                                <td><p><code>p::first-letter { font-size: 2em }</code> matches the first letter in a paragraph</p>></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>::before</code></p></td>
+                                <td><p>Used with the content property to generate content before the initial content of an element.</p></td>
+                                <td><p><code>h1::before { content: "*" }</code> places an asterisk at the start of a top-level heading</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>::after</code></p></td>
+                                <td><p>Used with the content property to generate content after the initial content of an element.</p></td>
+                                <td><p><code>h1::after { content: "+" }</code> places a plus-sign at the end of a top-level heading</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+            <section class="main-section" id="attribute_selectors">
+                <h2>Attribute Selectors</h2>
+                <article>
+                    <p>select elements based on an attribute or attribute value</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Selector</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><p><code>[attribute]</code></p></td>
+                                <td>Matches elements containing a given attribute.</td>
+                                <td><p><code>a[href] { color: red; }</code> matches a elements with an href attribute</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>[attribute="x"]</code></p></td>
+                                <td>Matches elements containing a given attribute with a given value.</td>
+                                <td> <p><code>a[href="/x/"] {color: red;}</code>matches a elements with the attribute and value href="/x/"</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>[attribute~="x"]</code></p></td>
+                                <td>Matches elements containing a given attribute with a value that contains a sub-value within a space-separated list.</td>
+                                <td> <p><code>abbr[title~="x"] { color: red;}</code> matches abbr elements with a title that contains 'x' (such as in title="Cascading Style Sheets")</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>[attribute|="x"]</code></p></td>
+                                <td>
+                                    <p>Matches elements containing a given attribute with a value that contains a sub-value within a hyphen-separated list.</p>
+                                    <p>Matches html elements with a lang attribute that contains 'en' (such as in lang="en-gb")</p>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>[attribute^="x"]</code></p></td>
+                                <td><p>Matches elements containing a given attribute with a value that starts with something.</p></td>
+                                <td> <p><code>a[href^="http://"] {color: red;}</code> matches a elements with an href attribute, the value of which begins with 'http://'</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>[attribute$="x"]</code></p></td>
+                                <td><p>Matches elements containing a given attribute with a value that ends with something.</p></td>
+                                <td><p><code>a[href$=".com"] {color: red; }</code> matches a elements with an href attribute, the value of which ends with '.com'</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><code>[attribute*="x"]</code></p></td>
+                                <td><p>Matches elements containing a given attribute with a value that contains something.</p></td>
+                                <td><p><code>a[href*="hdog"] {color: red;}</code> matches a elements with an href attribute, the value of which contains 'hdog'</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+            <section class="main-section" id="css_group_selectors">
+                <h2>CSS Group Selectors</h2>
+                <article>
+                    <p>The grouping selector in CSS picks all the HTML elements with the same style definitions.</p>
+                    <p>
+                        <pre>
+    h1 &#123;
+        text-align: center;
+        color: red; 
+    &#125; 
+    h2 &#123; 
+        text-align: center;
+        color: red; 
+    &#125; 
+    p &#123; 
+        text-align: center;
+        color: red; 
+    &#125;
+                        </pre>
+                    </p>
+                    <p>To minimize the code, just apply the CSS grouping selectors. Simply group the selectors by separating each selector with a comma. Let's see the following code after CSS Grouping Selectors:</p>
+                    <p>
+                        <pre>
+    h1, h2, p &#123;
+        text-align: center; 
+        color: red; 
+    &#125;
+                        </pre>
+                    </p>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>
